@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/01/23 17:08:05.000.081,=C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2025/01/23 17:08:05.000.365,=C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2025/01/23 17:08:16.000.774,=C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>2025/01/23 17:08:22.000.065,=C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit3.cpp</Transaction>
+    <Transaction>2025/01/23 17:08:29.000.256,=C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit4.cpp</Transaction>
+    <Transaction>2025/01/23 17:09:03.000.914,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Project1.cbproj</Transaction>
+    <Transaction>2025/01/23 17:09:03.000.793,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit2.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Unit2.h</Transaction>
+    <Transaction>2025/01/23 17:09:03.000.869,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit4.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Unit4.h</Transaction>
+    <Transaction>2025/01/23 17:09:03.000.792,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit2.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Unit2.cpp</Transaction>
+    <Transaction>2025/01/23 17:09:03.000.684,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Project1PCH1.h</Transaction>
+    <Transaction>2025/01/23 17:09:03.000.755,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit1.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Unit1.h</Transaction>
+    <Transaction>2025/01/23 17:09:03.000.755,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit1.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Unit1.cpp</Transaction>
+    <Transaction>2025/01/23 17:09:03.000.830,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit3.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Unit3.cpp</Transaction>
+    <Transaction>2025/01/23 17:09:03.000.869,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit4.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Unit4.cpp</Transaction>
+    <Transaction>2025/01/23 17:09:03.000.830,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit3.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Unit3.h</Transaction>
+    <Transaction>2025/01/23 17:09:03.000.755,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Unit1.dfm</Transaction>
+    <Transaction>2025/01/23 17:09:10.000.959,D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Unit4.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Conjunto.cpp</Transaction>
+    <Transaction>2025/01/23 17:09:10.000.959,D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Unit4.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Conjunto.h</Transaction>
+    <Transaction>2025/01/23 17:09:31.000.004,D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Unit3.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Polinomio.h</Transaction>
+    <Transaction>2025/01/23 17:09:31.000.004,D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Unit3.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Polinomio.cpp</Transaction>
+    <Transaction>2025/01/23 17:09:36.000.613,D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Unit2.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Lista.cpp</Transaction>
+    <Transaction>2025/01/23 17:09:36.000.613,D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Unit2.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Vectores\Lista.h</Transaction>
+  </Transactions>
+</BorlandProject>
