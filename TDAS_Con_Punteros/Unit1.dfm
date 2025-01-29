@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 502
+  ClientHeight = 710
   ClientWidth = 773
   Color = clGradientActiveCaption
   Font.Charset = DEFAULT_CHARSET
@@ -181,6 +181,7 @@ object Form1: TForm1
     Width = 75
     Height = 23
     TabOrder = 17
+    TextHint = 'Coeficiente'
   end
   object Edit4: TEdit
     Left = 225
@@ -188,6 +189,7 @@ object Form1: TForm1
     Width = 75
     Height = 23
     TabOrder = 18
+    TextHint = 'Expoente'
   end
   object Edit5: TEdit
     Left = 144
@@ -262,6 +264,7 @@ object Form1: TForm1
     Width = 75
     Height = 23
     TabOrder = 26
+    TextHint = 'Filas'
   end
   object Edit7: TEdit
     Left = 593
@@ -269,13 +272,15 @@ object Form1: TForm1
     Width = 75
     Height = 23
     TabOrder = 27
+    TextHint = 'Columnas'
   end
   object Edit8: TEdit
     Left = 512
     Top = 61
-    Width = 75
+    Width = 89
     Height = 23
     TabOrder = 28
+    TextHint = 'Valor repetido'
   end
   object Edit9: TEdit
     Left = 512
@@ -283,7 +288,7 @@ object Form1: TForm1
     Width = 75
     Height = 23
     TabOrder = 29
-    Text = 'f'
+    TextHint = 'Fila'
   end
   object Edit10: TEdit
     Left = 593
@@ -291,7 +296,7 @@ object Form1: TForm1
     Width = 75
     Height = 23
     TabOrder = 30
-    Text = 'c'
+    TextHint = 'Columna'
   end
   object Edit11: TEdit
     Left = 674
@@ -299,7 +304,7 @@ object Form1: TForm1
     Width = 75
     Height = 23
     TabOrder = 31
-    Text = 'd'
+    TextHint = 'Dato'
   end
   object Button22: TButton
     Left = 376
@@ -310,5 +315,96 @@ object Form1: TForm1
     TabOrder = 32
     StyleElements = [seFont, seBorder]
     OnClick = Button22Click
+  end
+  object Button23: TButton
+    Left = 8
+    Top = 496
+    Width = 120
+    Height = 25
+    Caption = 'Crear pila'
+    TabOrder = 33
+    StyleElements = [seFont, seBorder]
+    OnClick = Button23Click
+  end
+  object Button24: TButton
+    Left = 8
+    Top = 527
+    Width = 120
+    Height = 25
+    Caption = 'Apilar'
+    TabOrder = 34
+    StyleElements = [seFont, seBorder]
+    OnClick = Button24Click
+  end
+  object Button25: TButton
+    Left = 8
+    Top = 558
+    Width = 120
+    Height = 25
+    Caption = 'Desapilar'
+    TabOrder = 35
+    StyleElements = [seFont, seBorder]
+    OnClick = Button25Click
+  end
+  object Button26: TButton
+    Left = 8
+    Top = 589
+    Width = 120
+    Height = 25
+    Caption = 'Infija a posfija'
+    TabOrder = 36
+    StyleElements = [seFont, seBorder]
+    OnClick = Button26Click
+  end
+  object Button27: TButton
+    Left = 8
+    Top = 620
+    Width = 120
+    Height = 25
+    Caption = 'Evaluar posfija'
+    TabOrder = 37
+    StyleElements = [seFont, seBorder]
+    OnClick = Button27Click
+  end
+  object Button28: TButton
+    Left = 8
+    Top = 651
+    Width = 120
+    Height = 25
+    Caption = 'Mostar '
+    TabOrder = 38
+    StyleElements = [seFont, seBorder]
+    OnClick = Button28Click
+  end
+  object Edit12: TEdit
+    Left = 144
+    Top = 528
+    Width = 75
+    Height = 23
+    TabOrder = 39
+    TextHint = 'Dato'
+  end
+  object Edit13: TEdit
+    Left = 144
+    Top = 557
+    Width = 75
+    Height = 23
+    TabOrder = 40
+  end
+  object Edit14: TEdit
+    Left = 144
+    Top = 586
+    Width = 75
+    Height = 23
+    TabOrder = 41
+    TextHint = 'Infija'
+  end
+  object Edit15: TEdit
+    Left = 144
+    Top = 615
+    Width = 75
+    Height = 23
+    TabOrder = 42
+    TextHint = 'Posfija'
   end
 end

@@ -50,7 +50,7 @@ void Matriz_dispersa1::poner_dato(int f, int c, int valor) {
         }
     }
 }
-
+/*
 void Matriz_dispersa1::eliminar_nodo(int f, int c) {
     direccion actual = ptrMatD;
     direccion anterior = nullptr;
@@ -66,6 +66,23 @@ void Matriz_dispersa1::eliminar_nodo(int f, int c) {
         }
         anterior = actual;
         actual = actual->sig;
+    }
+}*/
+
+void Matriz_dispersa1::eliminar_nodo(int f, int c) {
+    direccion act = ptrMatD;
+    direccion ant = nullptr;
+    while (act && !(act->columna == c && act->fila == f)) {
+        ant = act;
+        act = act->sig;
+    }
+
+    if (act) {
+        if (ant)
+            ant->sig = act->sig;
+        else
+            ptrMatD = act->sig;
+        delete act;
     }
 }
 

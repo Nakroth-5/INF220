@@ -145,6 +145,10 @@
             <DependentOn>Clases\Matriz_dispersa1.h</DependentOn>
             <BuildOrder>9</BuildOrder>
         </CppCompile>
+        <CppCompile Include="Clases\Pilas.cpp">
+            <DependentOn>Clases\Pilas.h</DependentOn>
+            <BuildOrder>11</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Clases\PolinomioL.cpp">
             <DependentOn>Clases\PolinomioL.h</DependentOn>
             <BuildOrder>6</BuildOrder>

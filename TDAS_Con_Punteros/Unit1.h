@@ -14,6 +14,7 @@
 #include "ConjuntoP.h"
 #include "ConjuntoL.h"
 #include "Matriz_dispersa1.h"
+#include "Pilas.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -51,6 +52,16 @@ __published:	// IDE-managed Components
 	TEdit *Edit10;
 	TEdit *Edit11;
 	TButton *Button22;
+	TButton *Button23;
+	TButton *Button24;
+	TButton *Button25;
+	TButton *Button26;
+	TButton *Button27;
+	TButton *Button28;
+	TEdit *Edit12;
+	TEdit *Edit13;
+	TEdit *Edit14;
+	TEdit *Edit15;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
@@ -73,6 +84,12 @@ __published:	// IDE-managed Components
 	void __fastcall Button20Click(TObject *Sender);
 	void __fastcall Button21Click(TObject *Sender);
 	void __fastcall Button22Click(TObject *Sender);
+	void __fastcall Button23Click(TObject *Sender);
+	void __fastcall Button24Click(TObject *Sender);
+	void __fastcall Button25Click(TObject *Sender);
+	void __fastcall Button26Click(TObject *Sender);
+	void __fastcall Button27Click(TObject *Sender);
+	void __fastcall Button28Click(TObject *Sender);
 private:	// User declarations
 	Lista *lista;
 	PolinomioP *pol, *pol1;
@@ -80,6 +97,7 @@ private:	// User declarations
 	//ConjuntoP *conj_A, *conj_B, *conj_C;
 	ConjuntoL *conj_A, *conj_B, *conj_C;
 	Matriz_dispersa1 *x;
+    Pilas* pila;
 	//MatrizD_2_nodos* x;
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

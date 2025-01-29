@@ -268,10 +268,76 @@ void __fastcall TForm1::Button21Click(TObject *Sender)
 	}
 }
 //---------------------------------------------------------------------------
+TColor GenerarColorAleatorio()
+{
+    // Generar valores aleatorios para rojo, verde y azul
+    int rojo = 192 + rand() % 64;  // Número aleatorio entre 192 y 255
+	int verde = 192 + rand() % 64; // Número aleatorio entre 192 y 255
+	int azul = 192 + rand() % 64;  // Número aleatorio entre 192 y 255
+
+    // Crear un color aleatorio usando RGB y hacer casting a TColor
+    return static_cast<TColor>(RGB(rojo, verde, azul));
+}
 
 void __fastcall TForm1::Button22Click(TObject *Sender)
 {
-    Close();
+   Close();
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button23Click(TObject *Sender)
+{
+	pila = new Pilas();
+	if (pila) {
+		ShowMessage("Pila creada");
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button24Click(TObject *Sender)
+{
+	if (!pila)
+		ShowMessage("Crear la matriz dispersa");
+	else {
+		int dato = StrToInt(Edit12->Text);
+		pila->poner(dato);
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button25Click(TObject *Sender)
+{
+	if (!pila)
+		ShowMessage("Crear la matriz dispersa");
+	else {
+		int dato;
+		pila->sacar(dato);
+		Edit13->Text = dato;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button26Click(TObject *Sender)
+{
+    //infija
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button27Click(TObject *Sender)
+{
+    //posfija
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button28Click(TObject *Sender)
+{
+	//mostrar x 156 = y = 651
+    if (!pila)
+		ShowMessage("Crear la matriz dispersa");
+	else {
+        pila->mostrar(Form1->Canvas, 256, 651);
+	}
+}
+//---------------------------------------------------------------------------
+
 
