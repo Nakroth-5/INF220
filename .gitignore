@@ -1,0 +1,7 @@
+*.obj
+*.exe
+*.map
+*.pch
+*.tds
+__history/
+__astcache/
