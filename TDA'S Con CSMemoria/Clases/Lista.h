@@ -2,7 +2,7 @@
 
 #ifndef ListaH
 #define ListaH
-#include "Clases/CSMemoria.h"
+#include "CSMemoria.h"
 
 class Lista {
 private:
@@ -10,7 +10,8 @@ private:
     int longitud;
     CSMemoria *m;
 public:
-    Lista(CSMemoria *mem);
+	Lista(CSMemoria *mem);
+    Lista();
     direccion primero();
     direccion anterior(direccion dir);
     direccion siguiente(direccion dir);

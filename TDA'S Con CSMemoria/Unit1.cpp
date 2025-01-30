@@ -312,7 +312,7 @@ void __fastcall TForm1::Button21Click(TObject *Sender)
 
 void __fastcall TForm1::Button24Click(TObject *Sender)
 {
-    if (!mem)
+	if (!mem)
 		ShowMessage("Crear memoria primero");
 	else {
 		x = new Matriz_dispersa(mem);
@@ -366,6 +366,71 @@ void __fastcall TForm1::Button27Click(TObject *Sender)
 		ShowMessage("Crear la matriz dispersa");
 	else {
         x->dibujar_matriz(Form1->Canvas, 886, 130, 25, 25);
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button29Click(TObject *Sender)
+{
+    if (!mem)
+		ShowMessage("Crear memoria primero");
+	else {
+		pila = new PilasL(mem);
+		if (pila)
+			ShowMessage("Pila creada");
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button30Click(TObject *Sender)
+{
+    if (!pila)
+		ShowMessage("Crear la pila primero");
+	else {
+		double dato = StrToFloat(Edit19->Text);
+		pila->poner(dato);
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button31Click(TObject *Sender)
+{
+    if (!pila)
+		ShowMessage("Crear la pila primero");
+	else {
+		double dato;
+		pila->sacar(dato);
+		pila->mostrar(Form1->Canvas, 1048, 473);
+		Edit20->Text = dato;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button32Click(TObject *Sender)
+{
+    if (!pila)
+		ShowMessage("Crear la pila primero");
+	else {
+		string infija = AnsiString(Edit21->Text).c_str();
+		string posfija = pila->prefija_a_posfija(infija);
+		Edit22->Text = posfija.c_str();
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button33Click(TObject *Sender)
+{
+    std::string posfija = AnsiString(Edit22->Text).c_str();
+	ShowMessage(FloatToStr(pila->evaluar_posfija(posfija)));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button34Click(TObject *Sender)
+{
+    if (!pila)
+		ShowMessage("Crear la matriz dispersa");
+	else {
+		pila->mostrar(Form1->Canvas, 1048, 473);
 	}
 }
 //---------------------------------------------------------------------------

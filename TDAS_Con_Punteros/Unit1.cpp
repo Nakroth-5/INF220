@@ -287,7 +287,7 @@ void __fastcall TForm1::Button22Click(TObject *Sender)
 
 void __fastcall TForm1::Button23Click(TObject *Sender)
 {
-	pila = new Pilas();
+	pila = new PilasL();
 	if (pila) {
 		ShowMessage("Pila creada");
 	}
@@ -297,9 +297,9 @@ void __fastcall TForm1::Button23Click(TObject *Sender)
 void __fastcall TForm1::Button24Click(TObject *Sender)
 {
 	if (!pila)
-		ShowMessage("Crear la matriz dispersa");
+		ShowMessage("Crear la pila primero");
 	else {
-		int dato = StrToInt(Edit12->Text);
+		double dato = StrToFloat(Edit12->Text);
 		pila->poner(dato);
 	}
 }
@@ -308,10 +308,11 @@ void __fastcall TForm1::Button24Click(TObject *Sender)
 void __fastcall TForm1::Button25Click(TObject *Sender)
 {
 	if (!pila)
-		ShowMessage("Crear la matriz dispersa");
+		ShowMessage("Crear la pila primero");
 	else {
-		int dato;
+		double dato;
 		pila->sacar(dato);
+		pila->mostrar(Form1->Canvas, 300, 651);
 		Edit13->Text = dato;
 	}
 }
@@ -319,23 +320,31 @@ void __fastcall TForm1::Button25Click(TObject *Sender)
 
 void __fastcall TForm1::Button26Click(TObject *Sender)
 {
-    //infija
+	if (!pila)
+		ShowMessage("Crear la pila primero");
+	else {
+		string infija = AnsiString(Edit14->Text).c_str();
+		string posfija = pila->prefija_a_posfija(infija);
+		Edit15->Text = posfija.c_str();
+	}
 }
+
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::Button27Click(TObject *Sender)
 {
-    //posfija
+	std::string posfija = AnsiString(Edit15->Text).c_str();
+	ShowMessage(FloatToStr(pila->evaluar_posfija(posfija)));
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::Button28Click(TObject *Sender)
 {
 	//mostrar x 156 = y = 651
-    if (!pila)
+	if (!pila)
 		ShowMessage("Crear la matriz dispersa");
 	else {
-        pila->mostrar(Form1->Canvas, 256, 651);
+		pila->mostrar(Form1->Canvas, 300, 651);
 	}
 }
 //---------------------------------------------------------------------------

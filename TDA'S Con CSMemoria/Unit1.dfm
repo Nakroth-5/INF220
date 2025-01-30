@@ -227,6 +227,7 @@ object Form1: TForm1
     Width = 121
     Height = 23
     TabOrder = 21
+    TextHint = 'x,y,z'
   end
   object Edit2: TEdit
     Left = 168
@@ -234,6 +235,7 @@ object Form1: TForm1
     Width = 65
     Height = 23
     TabOrder = 22
+    TextHint = 'direcci'#243'n'
   end
   object Edit3: TEdit
     Left = 168
@@ -241,6 +243,7 @@ object Form1: TForm1
     Width = 65
     Height = 23
     TabOrder = 23
+    TextHint = 'Direcci'#243'n'
   end
   object Edit4: TEdit
     Left = 247
@@ -249,6 +252,7 @@ object Form1: TForm1
     Height = 23
     TabOrder = 24
     Text = '->'
+    TextHint = '->x'
   end
   object Edit5: TEdit
     Left = 359
@@ -256,6 +260,7 @@ object Form1: TForm1
     Width = 82
     Height = 23
     TabOrder = 25
+    TextHint = 'Dato'
   end
   object Edit6: TEdit
     Left = 168
@@ -264,6 +269,7 @@ object Form1: TForm1
     Height = 23
     TabOrder = 26
     Text = '0'
+    TextHint = 'Desde'
   end
   object Edit7: TEdit
     Left = 247
@@ -272,6 +278,7 @@ object Form1: TForm1
     Height = 23
     TabOrder = 27
     Text = '10'
+    TextHint = 'Hasta'
   end
   object Edit8: TEdit
     Left = 168
@@ -279,6 +286,7 @@ object Form1: TForm1
     Width = 65
     Height = 23
     TabOrder = 28
+    TextHint = 'Dato'
   end
   object Edit9: TEdit
     Left = 168
@@ -286,13 +294,15 @@ object Form1: TForm1
     Width = 65
     Height = 23
     TabOrder = 29
+    TextHint = 'Dato'
   end
   object Edit10: TEdit
     Left = 168
     Top = 319
-    Width = 65
+    Width = 66
     Height = 23
     TabOrder = 30
+    TextHint = 'Coeficiente'
   end
   object Edit11: TEdit
     Left = 247
@@ -300,6 +310,7 @@ object Form1: TForm1
     Width = 65
     Height = 23
     TabOrder = 31
+    TextHint = 'Exponente'
   end
   object Button22: TButton
     Left = 327
@@ -317,6 +328,7 @@ object Form1: TForm1
     Width = 65
     Height = 23
     TabOrder = 33
+    TextHint = 'Exponente'
     StyleElements = [seFont, seBorder]
   end
   object Button23: TButton
@@ -375,6 +387,8 @@ object Form1: TForm1
     Width = 75
     Height = 23
     TabOrder = 39
+    Text = '5'
+    TextHint = 'Filas'
   end
   object Edit14: TEdit
     Left = 967
@@ -382,6 +396,8 @@ object Form1: TForm1
     Width = 75
     Height = 23
     TabOrder = 40
+    Text = '5'
+    TextHint = 'Columnas'
   end
   object Edit15: TEdit
     Left = 886
@@ -389,6 +405,7 @@ object Form1: TForm1
     Width = 75
     Height = 23
     TabOrder = 41
+    Text = '0'
   end
   object Edit16: TEdit
     Left = 886
@@ -396,7 +413,7 @@ object Form1: TForm1
     Width = 75
     Height = 23
     TabOrder = 42
-    Text = 'f'
+    TextHint = 'Fila'
   end
   object Button28: TButton
     Left = 760
@@ -414,7 +431,7 @@ object Form1: TForm1
     Width = 75
     Height = 23
     TabOrder = 43
-    Text = 'c'
+    TextHint = 'Columna'
   end
   object Edit18: TEdit
     Left = 1048
@@ -422,6 +439,97 @@ object Form1: TForm1
     Width = 75
     Height = 23
     TabOrder = 44
-    Text = 'd'
+    TextHint = 'Dato'
+  end
+  object Button29: TButton
+    Left = 760
+    Top = 318
+    Width = 120
+    Height = 25
+    Caption = 'Crear pila'
+    TabOrder = 46
+    StyleElements = [seFont, seBorder]
+    OnClick = Button29Click
+  end
+  object Button30: TButton
+    Left = 760
+    Top = 349
+    Width = 120
+    Height = 25
+    Caption = 'Apilar'
+    TabOrder = 47
+    StyleElements = [seFont, seBorder]
+    OnClick = Button30Click
+  end
+  object Button31: TButton
+    Left = 760
+    Top = 380
+    Width = 120
+    Height = 25
+    Caption = 'Desapilar'
+    TabOrder = 48
+    StyleElements = [seFont, seBorder]
+    OnClick = Button31Click
+  end
+  object Button32: TButton
+    Left = 760
+    Top = 411
+    Width = 120
+    Height = 25
+    Caption = 'Infija a posfija'
+    TabOrder = 49
+    StyleElements = [seFont, seBorder]
+    OnClick = Button32Click
+  end
+  object Button33: TButton
+    Left = 760
+    Top = 442
+    Width = 120
+    Height = 25
+    Caption = 'Evaluar posfija'
+    TabOrder = 50
+    StyleElements = [seFont, seBorder]
+    OnClick = Button33Click
+  end
+  object Button34: TButton
+    Left = 760
+    Top = 473
+    Width = 120
+    Height = 25
+    Caption = 'Mostrar'
+    TabOrder = 51
+    StyleElements = [seFont, seBorder]
+    OnClick = Button34Click
+  end
+  object Edit19: TEdit
+    Left = 896
+    Top = 350
+    Width = 65
+    Height = 23
+    TabOrder = 52
+    TextHint = 'Dato'
+  end
+  object Edit20: TEdit
+    Left = 896
+    Top = 379
+    Width = 65
+    Height = 23
+    TabOrder = 53
+  end
+  object Edit21: TEdit
+    Left = 896
+    Top = 408
+    Width = 121
+    Height = 23
+    TabOrder = 54
+    TextHint = '5+7*5'
+  end
+  object Edit22: TEdit
+    Left = 896
+    Top = 443
+    Width = 121
+    Height = 23
+    TabOrder = 55
+    TextHint = '5 7 5 * +'
   end
 end

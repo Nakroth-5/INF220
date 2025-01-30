@@ -14,6 +14,8 @@
 #include "ConjuntoM.h"
 #include "ConjuntoL.h"
 #include "Matriz_dispersa.h"
+#include "Pilas.h"
+#include "PilasL.h"
 #include <Vcl.ComCtrls.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
@@ -65,6 +67,16 @@ __published:	// IDE-managed Components
 	TButton *Button28;
 	TEdit *Edit17;
 	TEdit *Edit18;
+	TButton *Button29;
+	TButton *Button30;
+	TButton *Button31;
+	TButton *Button32;
+	TButton *Button33;
+	TButton *Button34;
+	TEdit *Edit19;
+	TEdit *Edit20;
+	TEdit *Edit21;
+	TEdit *Edit22;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
@@ -93,15 +105,23 @@ __published:	// IDE-managed Components
 	void __fastcall Button25Click(TObject *Sender);
 	void __fastcall Button26Click(TObject *Sender);
 	void __fastcall Button27Click(TObject *Sender);
+	void __fastcall Button29Click(TObject *Sender);
+	void __fastcall Button30Click(TObject *Sender);
+	void __fastcall Button31Click(TObject *Sender);
+	void __fastcall Button32Click(TObject *Sender);
+	void __fastcall Button33Click(TObject *Sender);
+	void __fastcall Button34Click(TObject *Sender);
 
 private:	// User declarations
 	CSMemoria *mem;
 	Lista *list;
 	//PolinomioM *pol, *pol1, *pol2;
-	PolinomioL *pol, *pol1, *pol2;
+	PolinomioL* pol, *pol1, *pol2;
 	//ConjuntoM *conj_A, *conj_B, *conj_C;
 	ConjuntoL *conj_A, *conj_B, *conj_C;
-    Matriz_dispersa *x;
+	Matriz_dispersa *x;
+	//Pilas* pila;
+	PilasL* pila;
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
 };

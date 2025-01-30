@@ -6,6 +6,8 @@
 
 Lista::Lista(CSMemoria *mem): m(mem), ptrElementos(NULO), longitud(0) {}
 
+Lista::Lista(): m(new CSMemoria()), ptrElementos(NULO), longitud(0) {}
+
 direccion Lista::primero() {
 	return ptrElementos;
 }

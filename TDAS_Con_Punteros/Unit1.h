@@ -15,6 +15,7 @@
 #include "ConjuntoL.h"
 #include "Matriz_dispersa1.h"
 #include "Pilas.h"
+#include "PilasL.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -97,8 +98,9 @@ private:	// User declarations
 	//ConjuntoP *conj_A, *conj_B, *conj_C;
 	ConjuntoL *conj_A, *conj_B, *conj_C;
 	Matriz_dispersa1 *x;
-    Pilas* pila;
 	//MatrizD_2_nodos* x;
+	//Pilas* pila;
+	PilasL* pila;
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
 };

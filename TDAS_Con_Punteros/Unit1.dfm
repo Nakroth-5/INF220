@@ -394,7 +394,7 @@ object Form1: TForm1
   object Edit14: TEdit
     Left = 144
     Top = 586
-    Width = 75
+    Width = 120
     Height = 23
     TabOrder = 41
     TextHint = 'Infija'
@@ -402,7 +402,7 @@ object Form1: TForm1
   object Edit15: TEdit
     Left = 144
     Top = 615
-    Width = 75
+    Width = 120
     Height = 23
     TabOrder = 42
     TextHint = 'Posfija'

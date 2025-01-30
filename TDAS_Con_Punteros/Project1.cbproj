@@ -149,6 +149,10 @@
             <DependentOn>Clases\Pilas.h</DependentOn>
             <BuildOrder>11</BuildOrder>
         </CppCompile>
+        <CppCompile Include="Clases\PilasL.cpp">
+            <DependentOn>Clases\PilasL.h</DependentOn>
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Clases\PolinomioL.cpp">
             <DependentOn>Clases\PolinomioL.h</DependentOn>
             <BuildOrder>6</BuildOrder>

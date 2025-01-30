@@ -7,7 +7,7 @@ Pilas::Pilas() : tope(nullptr) {}
 
 bool Pilas::vacia() { return tope == nullptr; }
 
-void Pilas::poner(int dato) {
+void Pilas::poner(double dato) {
     direccion x = new Nodo();
     if (!x)
         throw Exception("Memoria llena");
@@ -16,7 +16,7 @@ void Pilas::poner(int dato) {
     tope = x;
 }
 
-void Pilas::sacar(int &dato) {
+void Pilas::sacar(double &dato) {
     if (vacia())
         throw Exception("Error: Pila vacía");
     dato = tope->dato;
@@ -24,37 +24,147 @@ void Pilas::sacar(int &dato) {
 }
 
 void Pilas::suprime(direccion x) {
-	if (!vacia()) {
-		direccion temp = x;
-		tope = x->sig;
-		delete temp;
+    if (!vacia()) {
+        direccion temp = x;
+        tope = x->sig;
+        delete temp;
+    }
+}
+
+bool isoperator(char c) {
+    return c == '+' || c == '-' || c == '*' || c == '/' || c == '^';
+}
+
+int precedence(char op) {
+    if (op == '+' || op == '-') return 1;
+    if (op == '*' || op == '/') return 2;
+    if (op == '^') return 2;
+    return 0;
+}
+
+bool opApertura(char c) {
+    return c == '(' || c == '[' || c == '{';
+}
+
+bool opCierre(char c) {
+    return c == ')' || c == ']' || c == '}';
+}
+
+
+string Pilas::prefija_a_posfija(string infija) {
+    string postfix = "";
+    Pilas operadores;
+
+    for (size_t i = 0; i < infija.size(); ++i) {
+        if (isdigit(infija[i])) {
+            while (i < infija.size() && isdigit(infija[i])) {
+                postfix += infija[i];
+                i++;
+            }
+            postfix += ' ';
+            i--;
+        } else if (opApertura(infija[i]))
+            operadores.poner(infija[i]);
+        else if (opCierre(infija[i])) {
+            double top;
+            while (!operadores.vacia()) {
+                operadores.sacar(top);
+                if (opApertura(top)) break;
+                postfix += (char)top;
+                postfix += ' ';
+            }
+        } else if (isoperator(infija[i])) {
+            double top;
+            while (!operadores.vacia()) {
+                operadores.sacar(top);
+                if (precedence(top) < precedence(infija[i])) {
+                    operadores.poner(top);
+                    break;
+                }
+                postfix += (char)top;
+                postfix += ' ';
+            }
+            operadores.poner(infija[i]);
+        }
+    }
+
+    double top;
+    while (!operadores.vacia()) {
+		operadores.sacar(top);
+        if (opApertura((char)top))
+			throw Exception("Error: falta algun '), ], }'");
+        postfix += (char)top;
+        postfix += ' ';
+    }
+    return postfix;
+}
+
+double evaluar(double a, double b, char operacion) {
+    if (operacion == '+') return a + b;
+    if (operacion == '-') return a - b;
+    if (operacion == '*') return a * b;
+    if (operacion == '/') return a / b;
+	if (operacion == '^') return pow(a, b);
+	return -1;
+}
+
+double Pilas::evaluar_posfija(string posfija) {
+    double resp = 0;
+    Pilas operadores;
+    for (size_t i = 0; i < posfija.size(); ++i) {
+        if (isdigit(posfija[i])) {
+            string num = "";
+            while (i < posfija.size() && isdigit(posfija[i])) {
+                num += posfija[i];
+                i++;
+            }
+            operadores.poner(stoi(num));
+        } else if (isoperator(posfija[i])) {
+			double a, b;
+			operadores.sacar(b);
+			operadores.sacar(a);
+            resp = evaluar(a, b, posfija[i]);
+			operadores.poner(resp);
+            i++;
+        }
 	}
+
+	if (!operadores.vacia())
+		operadores.sacar(resp);
+    return resp;
+}
+
+string formatNumber(double number, int precision) {
+	ostringstream oss;
+    oss << fixed << setprecision(precision) << number;
+    return oss.str();
 }
 
 void Pilas::dibujar(TCanvas *canvas, int x, int y, int ancho_celda, int alto_celda,
-					const string &mensaje, TColor color, bool con_borde) {
+                    const string &mensaje, TColor color, bool con_borde) {
 
 	TRect rect(x, y, x + ancho_celda, y + alto_celda);
 	canvas->Brush->Color = color;
 	canvas->FillRect(rect);
-	canvas->TextOut(x + 3, y + 3, mensaje.c_str());
+    canvas->TextOut(x + 3, y + 3, mensaje.c_str());
 
 	if (con_borde) {
-		canvas->Pen->Color = clBlack;
-		canvas->MoveTo(x, y);
-		canvas->LineTo(x + ancho_celda, y);
-		canvas->LineTo(x + ancho_celda, y + alto_celda);
-		canvas->LineTo(x, y + alto_celda);
-		canvas->LineTo(x, y);
-	}
+        canvas->Pen->Color = clBlack;
+        canvas->MoveTo(x, y);
+        canvas->LineTo(x + ancho_celda, y);
+        canvas->LineTo(x + ancho_celda, y + alto_celda);
+        canvas->LineTo(x, y + alto_celda);
+        canvas->LineTo(x, y);
+    }
 }
-
 
 void Pilas::mostrar(TCanvas *canvas, int x, int y) {
     const int ancho = 50;
     const int alto = 25;
-
-	// Crear una pila auxiliar para invertir el orden
+	TRect rect(x, y, x + 70, y -500);
+	canvas->Brush->Color = clGradientActiveCaption;
+	canvas->FillRect(rect);
+    // Crear una pila auxiliar para invertir el orden
     Pilas aux;
     int contador = 0;
 
@@ -66,14 +176,14 @@ void Pilas::mostrar(TCanvas *canvas, int x, int y) {
         actual = actual->sig;
     }
 
-	dibujar(canvas, x, y, ancho, alto, "Usuario", clLime, true);
+    dibujar(canvas, x, y, ancho, alto, "Usuario", clLime, true);
 
-	y -= alto; //y_base - alto;
-	while (!aux.vacia()) {
-		int valor;
-		aux.sacar(valor);
-        string dato = to_string(valor);
-		dibujar(canvas, x, y, ancho, alto, dato, (TColor)0x00A5FF, true);
+    y -= alto;
+    while (!aux.vacia()) {
+        double valor;
+        aux.sacar(valor);
+        string dato = formatNumber(valor, 2);
+        dibujar(canvas, x, y, ancho, alto, dato, (TColor)0x00A5FF, true);
         y -= alto;
     }
 }

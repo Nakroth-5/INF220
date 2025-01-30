@@ -129,7 +129,6 @@ void Lista::modifica(direccion dir, int dato) {
 }
 
 void Lista::mostrar(TCanvas *canvas, int x, int y) {
-    canvas->Font->Size = 12;
     TRect rect(x, y, 500, y + 20);
     canvas->Brush->Color = clGradientActiveCaption;
     canvas->FillRect(rect);
