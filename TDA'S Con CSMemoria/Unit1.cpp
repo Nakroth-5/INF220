@@ -17,8 +17,9 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
 	mem = new CSMemoria();
-	if (mem)
+	if (mem) {
 		ShowMessage("Memoria creada");
+	}
 }
 //---------------------------------------------------------------------------
 
@@ -120,9 +121,8 @@ void __fastcall TForm1::Button10Click(TObject *Sender)
 	if (!mem)
 		ShowMessage("Crear memoria primero");
 	else {
-		pol = new PolinomioL(mem);
-		pol1 = new PolinomioL(mem);
-		pol2 = new PolinomioL(mem);
+		pol = new PolinomioM(mem);
+		pol1 = new PolinomioM(mem);
 		if (pol)
 			ShowMessage("Polinomio creado");
 	}
@@ -152,28 +152,29 @@ void __fastcall TForm1::Button13Click(TObject *Sender)
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::Button22Click(TObject *Sender)
-{                                      /*
+{
+	//pol->anula();                                  /*
 	double x = StrToFloat(Edit12->Text);
-	Edit12->Text =  pol->evaluar(x); */
-	int coef = StrToInt(Edit10->Text);
-	int exp = StrToInt(Edit11->Text);
-	pol1->poner_termino(coef, exp);
-	pol1->mostrar(Form1->Canvas, 500, 350);
+	Edit12->Text =  pol->evaluar(x);
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::Button23Click(TObject *Sender)
 {
-	pol = new PolinomioL(mem);
+    if (pol2)
+		pol->anula();
+	pol = new PolinomioM(mem);
 	pol2->suma(pol, pol1);
 	pol2->mostrar(Form1->Canvas, 500, 386);
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::Button12Click(TObject *Sender)
-{
-   /*	pol2->derivar(pol);
-	pol2->mostrar(Form1->Canvas, 500, 386);*/
+{   if (pol2)
+		pol2->anula();
+	pol2 = new PolinomioM(mem);
+	pol2->derivar(pol);
+	pol2->mostrar(Form1->Canvas, 168, 349);
 }
 //---------------------------------------------------------------------------
 
@@ -292,6 +293,8 @@ void __fastcall TForm1::Button18Click(TObject *Sender)
 
 void __fastcall TForm1::Button19Click(TObject *Sender)
 {
+	if (conj_C)
+		conj_C->anula();
 	conj_C = new ConjuntoL(mem);
 	conj_A->unir(conj_B, conj_C);
 }
@@ -299,6 +302,8 @@ void __fastcall TForm1::Button19Click(TObject *Sender)
 
 void __fastcall TForm1::Button20Click(TObject *Sender)
 {
+	if (conj_C)
+		conj_C->anula();
 	conj_C = new ConjuntoL(mem);
 	conj_A->interseccion(conj_B, conj_C);
 }
@@ -375,7 +380,7 @@ void __fastcall TForm1::Button29Click(TObject *Sender)
     if (!mem)
 		ShowMessage("Crear memoria primero");
 	else {
-		pila = new PilasL(mem);
+		pila = new Pilas(mem);
 		if (pila)
 			ShowMessage("Pila creada");
 	}
@@ -412,7 +417,7 @@ void __fastcall TForm1::Button32Click(TObject *Sender)
 		ShowMessage("Crear la pila primero");
 	else {
 		string infija = AnsiString(Edit21->Text).c_str();
-		string posfija = pila->prefija_a_posfija(infija);
+		string posfija = pila->prefija_a_posfija(infija, mem);
 		Edit22->Text = posfija.c_str();
 	}
 }
@@ -421,7 +426,7 @@ void __fastcall TForm1::Button32Click(TObject *Sender)
 void __fastcall TForm1::Button33Click(TObject *Sender)
 {
     std::string posfija = AnsiString(Edit22->Text).c_str();
-	ShowMessage(FloatToStr(pila->evaluar_posfija(posfija)));
+	ShowMessage(FloatToStr(pila->evaluar_posfija(posfija, mem)));
 }
 //---------------------------------------------------------------------------
 
@@ -431,6 +436,48 @@ void __fastcall TForm1::Button34Click(TObject *Sender)
 		ShowMessage("Crear la matriz dispersa");
 	else {
 		pila->mostrar(Form1->Canvas, 1048, 473);
+	}
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Button35Click(TObject *Sender)
+{
+    if (cola)
+		delete cola;
+    cola = new Cola(mem);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button36Click(TObject *Sender)
+{
+    if (!cola)
+		ShowMessage("Crear la cola primero");
+	else {
+		int dato = StrToInt(Edit23->Text);
+		cola->poner(dato);
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button37Click(TObject *Sender)
+{
+    if (!cola)
+		ShowMessage("Crear la cola primero");
+	else {
+		int dato;
+		cola->sacar(dato);
+		Edit24->Text = dato;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button38Click(TObject *Sender)
+{
+    if (!cola)
+		ShowMessage("Crear la cola dispersa");
+	else {
+		cola->mostrar(Form1->Canvas, 896, 597);
 	}
 }
 //---------------------------------------------------------------------------

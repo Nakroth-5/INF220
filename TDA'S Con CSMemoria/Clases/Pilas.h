@@ -21,8 +21,8 @@ public:
 	void sacar(double &dato);
 	bool vacia();
 	void suprime(direccion  x);
-	string prefija_a_posfija(string infija);
-	double evaluar_posfija(string posfija);
+	string prefija_a_posfija(string infija, CSMemoria* mem);
+	double evaluar_posfija(string posfija, CSMemoria* mem);
 	void dibujar(TCanvas *canvas, int x, int y,
 				 int ancho_celda, int alto_celda, const string &mensaje, TColor color, bool con_borde);
 	void mostrar(TCanvas *canvas, int x, int y);

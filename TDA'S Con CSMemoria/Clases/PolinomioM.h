@@ -26,8 +26,10 @@ public:
 	void resta(PolinomioM *p1, PolinomioM *p2);
 	void multiplicar(PolinomioM *p1, PolinomioM *p2);
 	void suprime(int exp);
+    void anula();
     double evaluar(double x);
-    void derivar(PolinomioM *p1);
+	void derivar(PolinomioM *p1);
+    void derivar();
     void mostrar(TCanvas *canvas, int x, int y);
 };
 //---------------------------------------------------------------------------

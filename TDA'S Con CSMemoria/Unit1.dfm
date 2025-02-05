@@ -532,4 +532,59 @@ object Form1: TForm1
     TabOrder = 55
     TextHint = '5 7 5 * +'
   end
+  object Button35: TButton
+    Left = 760
+    Top = 504
+    Width = 120
+    Height = 25
+    Caption = 'Crear cola'
+    TabOrder = 56
+    StyleElements = [seFont, seBorder]
+    OnClick = Button35Click
+  end
+  object Button36: TButton
+    Left = 760
+    Top = 535
+    Width = 120
+    Height = 25
+    Caption = 'Poner'
+    TabOrder = 57
+    StyleElements = [seFont, seBorder]
+    OnClick = Button36Click
+  end
+  object Button37: TButton
+    Left = 760
+    Top = 566
+    Width = 120
+    Height = 25
+    Caption = 'Sacar'
+    TabOrder = 58
+    StyleElements = [seFont, seBorder]
+    OnClick = Button37Click
+  end
+  object Button38: TButton
+    Left = 760
+    Top = 597
+    Width = 120
+    Height = 25
+    Caption = 'Mostrar'
+    TabOrder = 59
+    StyleElements = [seFont, seBorder]
+    OnClick = Button38Click
+  end
+  object Edit23: TEdit
+    Left = 896
+    Top = 536
+    Width = 121
+    Height = 23
+    TabOrder = 60
+    TextHint = 'Dato'
+  end
+  object Edit24: TEdit
+    Left = 896
+    Top = 565
+    Width = 121
+    Height = 23
+    TabOrder = 61
+  end
 end

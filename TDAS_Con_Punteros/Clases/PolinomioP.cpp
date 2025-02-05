@@ -51,53 +51,66 @@ int PolinomioP::coeficiente(int exp) {
     if (es_cero())
         throw Exception("Polinomio vacio");
     direccion dir = buscar_exponente(exp);
-    if (exp)
+    if (dir)
         return dir->coef;
     throw Exception("Error: No existe termino con ese exponente");
 }
 
-void PolinomioP::asignar_coef(int coef, int exp) {//modificar coef
+void PolinomioP::asignar_coef(int coef, int exp) {
     if (es_cero())
         throw Exception("Polinomio vacio");
-    direccion x = buscar_exponente(exp);
-    if (exp) {
+	direccion x = buscar_exponente(exp);
+    if (x) {
         x->coef = coef;
         if (x->coef == 0)
             suprime(exp);
-    } else
-        throw Exception("Error: No existe termino con ese exponente");
+	} else
+		throw Exception("Error: No existe termino con ese exponente");
 }
 
 void PolinomioP::poner_termino(int coef, int exp) {
     if (coef == 0)
         return;
     if (!buscar_exponente(exp)) {
-        direccion x = new NodoPol(coef, exp);
-        if (x) {
-            x->sig = ptrPoli;
-            ptrPoli = x;
+		direccion x = new NodoPol(coef, exp);
+		if (x) {
+			x->sig = ptrPoli;
+			ptrPoli = x;
             nt++;
-        }
-    } else
-        asignar_coef(coeficiente(exp) + coef, exp);
+		}
+	} else
+		asignar_coef(coeficiente(exp) + coef, exp);
 }
 
 void PolinomioP::suprime(int exp) {
-    direccion act = ptrPoli;
-    direccion ant = nullptr;
+	if (es_cero()) return;
+
+	direccion act = ptrPoli;
+	direccion ant = nullptr;
     while (act && act->exp != exp) {
         ant = act;
         act = act->sig;
     }
 
     if (act) {
-        if (!ant)
+		if (!ant)
             ptrPoli = act->sig;
         else
             ant->sig = act->sig;
-        nt--;
+		nt--;
         delete act;
     }
+}
+
+void PolinomioP::anula() {
+	if (es_cero()) return;
+	direccion act = ptrPoli;
+	direccion sig= nullptr;
+	while (act) {
+		sig = act->sig;
+		suprime(act->exp);
+        act = sig;
+	}
 }
 
 void PolinomioP::suma(PolinomioP *p1, PolinomioP *p2) {
@@ -132,10 +145,10 @@ void PolinomioP::derivar(PolinomioP *p1) {
 	for (direccion x = p1->ptrPoli; x; x = x->sig) {
 		int coef = x->coef;
 		int exp = x->exp;
-		if (x->exp-- == -1)
+		if (exp - 1 == -1)
 			poner_termino(0, 0);
 		else
-			poner_termino(coef * exp, x->exp--);
+			poner_termino(coef * exp, exp - 1);
 	}
 }
 

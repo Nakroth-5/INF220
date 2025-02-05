@@ -50,53 +50,47 @@ void Matriz_dispersa1::poner_dato(int f, int c, int valor) {
         }
     }
 }
-/*
-void Matriz_dispersa1::eliminar_nodo(int f, int c) {
-    direccion actual = ptrMatD;
-    direccion anterior = nullptr;
-
-    while (actual) {
-        if (actual->fila == f && actual->columna == c) {
-            if (!anterior)
-                ptrMatD = actual->sig;
-            else
-                anterior->sig = actual->sig;
-            delete actual;
-            return;
-        }
-        anterior = actual;
-        actual = actual->sig;
-    }
-}*/
 
 void Matriz_dispersa1::eliminar_nodo(int f, int c) {
+	direccion act = ptrMatD;
+	direccion ant = nullptr;
+	while (act && !(act->columna == c && act->fila == f)) {
+		ant = act;
+		act = act->sig;
+	}
+
+	if (act) {
+		if (ant)
+			ant->sig = act->sig;
+		else
+			ptrMatD = act->sig;
+		delete act;
+	}
+}
+
+void Matriz_dispersa1::anula() {
+	if (!ptrMatD) return;
     direccion act = ptrMatD;
-    direccion ant = nullptr;
-    while (act && !(act->columna == c && act->fila == f)) {
-        ant = act;
-        act = act->sig;
-    }
+	direccion sig = nullptr;
+	while (act) {
+		sig = act->sig;
+		eliminar_nodo(act->fila, act->columna);
+		act = sig;
+	}
 
-    if (act) {
-        if (ant)
-            ant->sig = act->sig;
-        else
-            ptrMatD = act->sig;
-        delete act;
-    }
 }
 
 void Matriz_dispersa1::elimina_dato(int valor) {
-    if (!ptrMatD) return;
-    direccion act = ptrMatD;
-    direccion sig = nullptr;
-    while (act) {
-        sig = act->sig;
-        if (act->dato == valor) {
-            eliminar_nodo(act->fila, act->columna);
-        }
-        act = sig;
-    }
+	if (!ptrMatD) return;
+	direccion act = ptrMatD;
+	direccion sig = nullptr;
+	while (act) {
+		sig = act->sig;
+		if (act->dato == valor) {
+			eliminar_nodo(act->fila, act->columna);
+		}
+		act = sig;
+	}
 }
 
 bool Matriz_dispersa1::existe_valor_repetido(int valor) {

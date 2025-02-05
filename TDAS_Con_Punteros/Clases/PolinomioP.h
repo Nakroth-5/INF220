@@ -33,7 +33,8 @@ public:
     void suma(PolinomioP *p1, PolinomioP *p2);
     void resta(PolinomioP *p1, PolinomioP *p2);
 	void multiplicar(PolinomioP *p1, PolinomioP *p2);
-    void suprime(int exp);
+	void suprime(int exp);
+    void anula();
     double evaluar(double x);
     void derivar(PolinomioP *p1);
     void mostrar(TCanvas *canvas, int x, int y);

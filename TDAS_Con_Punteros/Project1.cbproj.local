@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>2025/01/21 16:39:13.000.221,=C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>2025/01/21 16:39:13.000.476,=C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2025/01/21 16:39:13.000.221,=C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>2025/01/21 16:39:27.000.460,=C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
     <Transaction>2025/01/21 16:39:31.000.264,=C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit3.cpp</Transaction>
     <Transaction>2025/01/21 16:39:39.000.382,=C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit4.cpp</Transaction>
-    <Transaction>2025/01/21 16:41:05.000.148,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit2.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.cpp</Transaction>
     <Transaction>2025/01/21 16:41:05.000.232,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit4.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit4.h</Transaction>
-    <Transaction>2025/01/21 16:41:05.000.148,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit2.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.h</Transaction>
     <Transaction>2025/01/21 16:41:05.000.039,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Project1PCH1.h</Transaction>
+    <Transaction>2025/01/21 16:41:05.000.148,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit2.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.cpp</Transaction>
     <Transaction>2025/01/21 16:41:05.000.105,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit1.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit1.h</Transaction>
     <Transaction>2025/01/21 16:41:05.000.105,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit1.dfm</Transaction>
-    <Transaction>2025/01/21 16:41:05.000.105,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit1.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit1.cpp</Transaction>
-    <Transaction>2025/01/21 16:41:05.000.190,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit3.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit3.cpp</Transaction>
-    <Transaction>2025/01/21 16:41:05.000.232,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit4.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit4.cpp</Transaction>
+    <Transaction>2025/01/21 16:41:05.000.148,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit2.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.h</Transaction>
     <Transaction>2025/01/21 16:41:05.000.281,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Project1.cbproj</Transaction>
+    <Transaction>2025/01/21 16:41:05.000.190,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit3.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit3.cpp</Transaction>
+    <Transaction>2025/01/21 16:41:05.000.105,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit1.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit1.cpp</Transaction>
     <Transaction>2025/01/21 16:41:05.000.190,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit3.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit3.h</Transaction>
+    <Transaction>2025/01/21 16:41:05.000.232,C:\Users\evert_4y9abmh\Documents\Embarcadero\Studio\Projects\Unit4.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit4.cpp</Transaction>
     <Transaction>2025/01/21 16:41:12.000.017,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit4.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Polinomio.h</Transaction>
     <Transaction>2025/01/21 16:41:12.000.017,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit4.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Polinomio.cpp</Transaction>
     <Transaction>2025/01/21 16:41:17.000.711,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit3.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Lista.h</Transaction>
@@ -30,10 +30,10 @@
     <Transaction>2025/01/21 16:43:58.000.220,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\PolinomioL.cpp</Transaction>
     <Transaction>2025/01/21 17:19:18.000.039,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Conjunto.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\ConjuntoP.cpp</Transaction>
     <Transaction>2025/01/21 17:19:18.000.039,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Conjunto.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\ConjuntoP.h</Transaction>
-    <Transaction>2025/01/21 17:46:52.000.567,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\PolinomioL.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\PolinomioL.cpp</Transaction>
     <Transaction>2025/01/21 17:46:52.000.567,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\PolinomioL.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\PolinomioL.h</Transaction>
-    <Transaction>2025/01/21 17:47:04.000.697,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\ConjuntoP.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\ConjuntoP.cpp</Transaction>
+    <Transaction>2025/01/21 17:46:52.000.567,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\PolinomioL.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\PolinomioL.cpp</Transaction>
     <Transaction>2025/01/21 17:47:04.000.697,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\ConjuntoP.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\ConjuntoP.h</Transaction>
+    <Transaction>2025/01/21 17:47:04.000.697,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\ConjuntoP.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\ConjuntoP.cpp</Transaction>
     <Transaction>2025/01/21 17:47:13.000.126,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Lista.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\Lista.cpp</Transaction>
     <Transaction>2025/01/21 17:47:13.000.126,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Lista.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\Lista.h</Transaction>
     <Transaction>2025/01/21 17:47:22.000.492,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\PolinomioP.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\PolinomioP.h</Transaction>
@@ -42,20 +42,23 @@
     <Transaction>2025/01/23 15:51:49.000.754,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\ConjuntoL.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.cpp</Transaction>
     <Transaction>2025/01/23 15:51:49.000.755,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\ConjuntoL.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.h</Transaction>
     <Transaction>2025/01/25 08:14:16.000.606,=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.cpp</Transaction>
-    <Transaction>2025/01/25 08:26:18.000.148,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\Matriz_dispersa.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.cpp</Transaction>
     <Transaction>2025/01/25 08:26:18.000.150,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\Matriz_dispersa.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.h</Transaction>
+    <Transaction>2025/01/25 08:26:18.000.148,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\Matriz_dispersa.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.cpp</Transaction>
     <Transaction>2025/01/27 12:00:20.000.375,=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.cpp</Transaction>
-    <Transaction>2025/01/27 12:00:47.000.551,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\Matriz_dispersa1.h</Transaction>
     <Transaction>2025/01/27 12:00:47.000.551,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\Matriz_dispersa1.cpp</Transaction>
+    <Transaction>2025/01/27 12:00:47.000.551,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\Matriz_dispersa1.h</Transaction>
     <Transaction>2025/01/27 14:46:02.000.249,=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.cpp</Transaction>
-    <Transaction>2025/01/27 14:46:44.000.697,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\MatrizD_2_nodos.cpp</Transaction>
     <Transaction>2025/01/27 14:46:44.000.698,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.h=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\MatrizD_2_nodos.h</Transaction>
+    <Transaction>2025/01/27 14:46:44.000.697,D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Unit2.cpp=D:\Materias\Verano\INF220-SA1\TDA'S Con Punteros\Clases\MatrizD_2_nodos.cpp</Transaction>
     <Transaction>2025/01/28 09:44:11.000.509,=D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Unit2.cpp</Transaction>
     <Transaction>2025/01/28 09:44:32.000.265,D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Clases\Pilas.cpp=D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Unit2.cpp</Transaction>
     <Transaction>2025/01/28 09:44:32.000.265,D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Clases\Pilas.h=D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Unit2.h</Transaction>
-    <Transaction>2025/01/29 19:40:32.690,=D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Unit2.cpp</Transaction>
-    <Transaction>2025/01/29 19:40:49.640,D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Clases\PilasL.cpp=D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Unit2.cpp</Transaction>
-    <Transaction>2025/01/29 19:40:49.640,D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Clases\PilasL.h=D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Unit2.h</Transaction>
-    <Transaction>2025/01/29 20:28:38.956,=D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Unit2.cpp</Transaction>
+    <Transaction>2025/01/29 19:40:32.000.690,=D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Unit2.cpp</Transaction>
+    <Transaction>2025/01/29 19:40:49.000.640,D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Clases\PilasL.cpp=D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Unit2.cpp</Transaction>
+    <Transaction>2025/01/29 19:40:49.000.640,D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Clases\PilasL.h=D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Unit2.h</Transaction>
+    <Transaction>2025/01/29 20:28:38.000.956,=D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Unit2.cpp</Transaction>
+    <Transaction>2025/02/04 21:27:22.537,=D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Unit2.cpp</Transaction>
+    <Transaction>2025/02/04 21:27:32.399,D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Clases\Cola.cpp=D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Unit2.cpp</Transaction>
+    <Transaction>2025/02/04 21:27:32.399,D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Clases\Cola.h=D:\Materias\Verano\INF220-SA1\INF220-SA\TDAS_Con_Punteros\Unit2.h</Transaction>
   </Transactions>
 </BorlandProject>

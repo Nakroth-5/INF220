@@ -4,7 +4,7 @@
 
 #include "PolinomioM.h"
 
-PolinomioM::PolinomioM(CSMemoria *mem): m(mem), ptrPoli(NULO), nt(0) {}
+PolinomioM::PolinomioM(CSMemoria* mem) : m(mem), ptrPoli(NULO), nt(0) {}
 
 PolinomioM::~PolinomioM() {
     while (ptrPoli != NULO) {
@@ -15,7 +15,9 @@ PolinomioM::~PolinomioM() {
     nt = 0;
 }
 
-bool PolinomioM::es_cero() { return ptrPoli == NULO; }
+bool PolinomioM::es_cero() {
+    return ptrPoli == NULO;
+}
 
 int PolinomioM::grado() {
     if (es_cero())
@@ -30,7 +32,6 @@ int PolinomioM::grado() {
     return max_grado;
 }
 
-
 direccion PolinomioM::buscar_exponente(int exp) {
     for (direccion x = ptrPoli; x != NULO; x = m->obtener_dato(x, "->sig"))
         if (m->obtener_dato(x, "->exp") == exp)
@@ -41,7 +42,7 @@ direccion PolinomioM::buscar_exponente(int exp) {
 direccion PolinomioM::buscar_termino(int i) {
     if (es_cero())
         throw Exception("Polinomio vacio");
-    int j = 0 ;
+    int j = 0;
     for (direccion x = ptrPoli; x != NULO; x = m->obtener_dato(x, "->sig")) {
         j++;
         if (j == i)
@@ -66,7 +67,7 @@ int PolinomioM::exponente(int ntr) {
     throw Exception("");
 }
 
-void PolinomioM::asignar_coef(int coef, int exp) {//modificar coef
+void PolinomioM::asignar_coef(int coef, int exp) { //modificar coef
     if (es_cero())
         throw Exception("Polinomio vacio");
     direccion x = buscar_exponente(exp);
@@ -79,8 +80,9 @@ void PolinomioM::asignar_coef(int coef, int exp) {//modificar coef
 }
 
 void PolinomioM::poner_termino(int coef, int exp) {
-    if (buscar_exponente(exp) == NULO) {
-        direccion x = m->new_espacio("coef,exp,sig");
+    direccion x = buscar_exponente(exp);
+    if (x == NULO && coef != 0) {
+        x = m->new_espacio("coef,exp,sig");
         if (x != NULO) {
             m->poner_dato(x, "->coef", coef);
             m->poner_dato(x, "->exp", exp);
@@ -88,7 +90,7 @@ void PolinomioM::poner_termino(int coef, int exp) {
             ptrPoli = x;
             nt++;
         }
-    } else
+    } else if (x != NULO)
         asignar_coef(coeficiente(exp) + coef, exp);
 }
 
@@ -110,7 +112,19 @@ void PolinomioM::suprime(int exp) {
     }
 }
 
-void PolinomioM::operacion(PolinomioM *p1, PolinomioM *p2, int signo) {
+void PolinomioM::anula() {
+    if (es_cero())
+        return;
+    direccion act = ptrPoli;
+    direccion sig = NULO;
+    while (act != NULO) {
+        sig = m->obtener_dato(act, "->sig");
+        suprime(m->obtener_dato(act, "->exp"));
+        act = sig;
+    }
+}
+
+void PolinomioM::operacion(PolinomioM* p1, PolinomioM* p2, int signo) {
     for (int i = 0; i < p1->numero_terminos(); ++i) {
         int exp = p1->exponente(i + 1);
         int coef = p1->coeficiente(exp);
@@ -124,50 +138,76 @@ void PolinomioM::operacion(PolinomioM *p1, PolinomioM *p2, int signo) {
     }
 }
 
-void PolinomioM::suma(PolinomioM *p1, PolinomioM *p2) {
+void PolinomioM::suma(PolinomioM* p1, PolinomioM* p2) {
     operacion(p1, p2, 1);
 }
 
-void PolinomioM::resta(PolinomioM *p1, PolinomioM *p2) {
+void PolinomioM::resta(PolinomioM* p1, PolinomioM* p2) {
     operacion(p1, p2, -1);
 }
 
-
-void PolinomioM::multiplicar(PolinomioM *p1, PolinomioM *p2) {
+void PolinomioM::multiplicar(PolinomioM* p1, PolinomioM* p2) {
     for (int i = 0; i < p1->numero_terminos(); ++i) {
         int exp = p1->exponente(i + 1);
         int coef = p1->coeficiente(exp);
-		for (int j = 0; j < p2->numero_terminos(); j++) {
-			int expj = p2->exponente(j + 1);
-			int coefj = p2->coeficiente(expj);
+        for (int j = 0; j < p2->numero_terminos(); j++) {
+            int expj = p2->exponente(j + 1);
+            int coefj = p2->coeficiente(expj);
             poner_termino(coef * coefj, exp + expj);
-		}
-	}
+        }
+    }
 }
 
 double PolinomioM::evaluar(double x) {
     double resultado = 0;
     for (direccion i = ptrPoli; i != NULO; i = m->obtener_dato(i, "->sig"))
-        resultado += m->obtener_dato(i, "->coef") * pow(x, m->obtener_dato(i, "->exp"));
+        resultado +=
+            m->obtener_dato(i, "->coef") * pow(x, m->obtener_dato(i, "->exp"));
     return resultado;
 }
 
-void PolinomioM::derivar(PolinomioM *p1) {
-	direccion x = p1->ptrPoli;
+void PolinomioM::derivar(PolinomioM* p1) {
+    direccion x = p1->ptrPoli;
     direccion sig = NULO;
     while (x != NULO) {
-        int coef = m->obtener_dato(x, "->coef");
+		int coef = m->obtener_dato(x, "->coef");
         int exp = m->obtener_dato(x, "->exp");
         if (exp - 1 == -1)
-			poner_termino(0, exp - 1);
-		else
+            poner_termino(0, exp - 1);
+        else
             poner_termino(coef * exp, exp - 1);
         x = m->obtener_dato(x, "->sig");
-    }
+	}
 }
 
-void PolinomioM::mostrar(TCanvas *canvas, int x, int y) {
-    TRect rect(x, y, 500, y + 20);
+void PolinomioM::derivar() {
+	if (es_cero())
+		return;
+    direccion dir = ptrPoli;
+	direccion ant = NULO;
+    while (dir != NULO) {
+		int coef = m->obtener_dato(dir, "->coef");
+		int exp = m->obtener_dato(dir, "->exp");
+		direccion siguinete = m->obtener_dato(dir, "->sig");
+		if (exp == 0) {
+			if (ant == NULO)
+                ptrPoli = siguinete;
+			else
+				m->poner_dato(ant, "->sig", siguinete);
+			m->delete_espacio(dir);
+			nt--;
+			dir = siguinete;
+		} else {
+            m->poner_dato(dir, "->coef", coef * exp);
+			m->poner_dato(dir, "->exp", exp - 1);
+			ant = dir;
+			dir = siguinete;
+		}
+	}
+}
+
+void PolinomioM::mostrar(TCanvas* canvas, int x, int y) {
+	TRect rect(x, y, 500, y + 40);
     canvas->Pen->Color = clBlack;
     canvas->FillRect(rect);
     if (es_cero())
@@ -176,13 +216,17 @@ void PolinomioM::mostrar(TCanvas *canvas, int x, int y) {
     for (direccion x = ptrPoli; x != NULO; x = m->obtener_dato(x, "->sig")) {
         int dato = (m->obtener_dato(x, "->coef"));
         if (m->obtener_dato(x, "->exp") == 0) {
-            poli += dato > 0? "+" + IntToStr(dato) :"" + IntToStr(dato);
+            poli += dato > 0 ? "+" + IntToStr(dato) : "" + IntToStr(dato);
         } else if (dato > 0)
-            poli += "+" + IntToStr(dato) + "X^" + IntToStr(m->obtener_dato(x, "->exp"));
+            poli += "+" + IntToStr(dato) + "X^" +
+                    IntToStr(m->obtener_dato(x, "->exp"));
         else
-            poli += IntToStr(dato) + "X^" + IntToStr(m->obtener_dato(x, "->exp"));
+            poli +=
+                IntToStr(dato) + "X^" + IntToStr(m->obtener_dato(x, "->exp"));
     }
     canvas->TextOut(x, y, poli);
+    canvas->TextOut(x, y + 17, "Ptr = " + IntToStr(ptrPoli));
 }
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
+

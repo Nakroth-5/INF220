@@ -161,19 +161,18 @@ void Lista::modifica(direccion dir, int dato) {
 }
 
 void Lista::anule() {
-    if (vacia())
-        throw Exception("Error: lista vacia");
+	if (!vacia()) {
+		direccion borrar = ptrElementos;
 
-    direccion borrar = ptrElementos;
+		while (borrar != NULO) {
+			direccion sig = m->obtener_dato(borrar, "->sig");
+			m->delete_espacio(borrar);
+			borrar = sig;
+		}
 
-    while (borrar != NULO) {
-        direccion sig = m->obtener_dato(borrar, "->sig");
-        m->delete_espacio(borrar);
-        borrar = sig;
-    }
-
-    ptrElementos = NULO;
-    longitud = 0;
+		ptrElementos = NULO;
+		longitud = 0;
+	}
 }
 
 bool Lista::vacia() {

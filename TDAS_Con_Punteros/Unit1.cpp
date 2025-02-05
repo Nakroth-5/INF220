@@ -55,6 +55,7 @@ void __fastcall TForm1::Button5Click(TObject *Sender)
 {
 	pol = new PolinomioP();
 	if (pol) {
+		pol->anula();
 		ShowMessage("Polinomio creado");
 	}
 }
@@ -75,9 +76,11 @@ void __fastcall TForm1::Button7Click(TObject *Sender)
     if (!pol)
 		ShowMessage("Primero crear el polinomio");
 	else {
-		/*pol1 = new PolinomioL();
+		if (pol1)
+			pol1->anula();
+		pol1 = new PolinomioP();
 		pol1->derivar(pol);
-		pol1->mostrar(Form1->Canvas, 144, 186); */
+		pol1->mostrar(Form1->Canvas, 144, 186);
 	}
 }
 //---------------------------------------------------------------------------
@@ -167,6 +170,7 @@ void __fastcall TForm1::Button12Click(TObject *Sender)
 
 void __fastcall TForm1::Button13Click(TObject *Sender)
 {
+	if (conj_C) conj_C->anula();
 	conj_C = new ConjuntoL();
 	conj_A->unir(conj_B, conj_C);
 }
@@ -174,6 +178,7 @@ void __fastcall TForm1::Button13Click(TObject *Sender)
 
 void __fastcall TForm1::Button14Click(TObject *Sender)
 {
+    if (conj_C) conj_C->anula();
 	conj_C = new ConjuntoL();
 	conj_A->interseccion(conj_B, conj_C);
 }
@@ -218,6 +223,7 @@ void __fastcall TForm1::Button17Click(TObject *Sender)
 {
 	x = new Matriz_dispersa1();
 	if (x) {
+        x->anula();
 		ShowMessage("Matriz dispersa creada");
 	}
 }
@@ -349,4 +355,47 @@ void __fastcall TForm1::Button28Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+
+
+void __fastcall TForm1::Button29Click(TObject *Sender)
+{
+	if (cola)
+		delete cola;
+    cola = new Cola();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button30Click(TObject *Sender)
+{
+	if (!cola)
+		ShowMessage("Crear la cola primero");
+	else {
+		double dato = StrToFloat(Edit16->Text);
+		cola->poner(dato);
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button31Click(TObject *Sender)
+{
+	if (!cola)
+		ShowMessage("Crear la cola primero");
+	else {
+		int dato;
+		cola->sacar(dato);
+		Edit17->Text = dato;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button32Click(TObject *Sender)
+{
+	if (!cola)
+		ShowMessage("Crear la cola dispersa");
+	else {
+		cola->mostrar(Form1->Canvas, 512, 320);
+	}
+}
+//---------------------------------------------------------------------------
 

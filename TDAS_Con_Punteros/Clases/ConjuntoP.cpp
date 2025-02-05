@@ -7,6 +7,8 @@
 ConjuntoP::ConjuntoP(): ptrConjunto(nullptr), cantidad(0) {}
 
 void ConjuntoP::anula() {
+	if (vacio()) return;
+
     while (ptrConjunto) {
         direccion temp = ptrConjunto;
         ptrConjunto = ptrConjunto->sig;

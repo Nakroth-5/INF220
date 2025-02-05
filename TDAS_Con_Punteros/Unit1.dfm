@@ -308,7 +308,7 @@ object Form1: TForm1
   end
   object Button22: TButton
     Left = 376
-    Top = 155
+    Top = 351
     Width = 120
     Height = 25
     Caption = 'Salir'
@@ -406,5 +406,69 @@ object Form1: TForm1
     Height = 23
     TabOrder = 42
     TextHint = 'Posfija'
+  end
+  object Button29: TButton
+    Left = 376
+    Top = 227
+    Width = 120
+    Height = 25
+    Caption = 'Crear cola'
+    TabOrder = 43
+    StyleElements = [seFont, seBorder]
+    OnClick = Button29Click
+  end
+  object Button30: TButton
+    Left = 376
+    Top = 258
+    Width = 120
+    Height = 25
+    Caption = 'Poner'
+    TabOrder = 44
+    StyleElements = [seFont, seBorder]
+    OnClick = Button30Click
+  end
+  object Button31: TButton
+    Left = 376
+    Top = 289
+    Width = 120
+    Height = 25
+    Caption = 'Sacar'
+    TabOrder = 45
+    StyleElements = [seFont, seBorder]
+    OnClick = Button31Click
+  end
+  object Button32: TButton
+    Left = 376
+    Top = 320
+    Width = 120
+    Height = 25
+    Caption = 'Mostrar'
+    TabOrder = 46
+    StyleElements = [seFont, seBorder]
+    OnClick = Button32Click
+  end
+  object Button33: TButton
+    Left = 392
+    Top = 423
+    Width = 120
+    Height = 25
+    Caption = 'Button33'
+    TabOrder = 47
+    StyleElements = [seFont, seBorder]
+  end
+  object Edit16: TEdit
+    Left = 512
+    Top = 259
+    Width = 121
+    Height = 23
+    TabOrder = 48
+    TextHint = 'Dato'
+  end
+  object Edit17: TEdit
+    Left = 512
+    Top = 288
+    Width = 121
+    Height = 23
+    TabOrder = 49
   end
 end

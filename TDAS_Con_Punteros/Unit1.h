@@ -16,6 +16,7 @@
 #include "Matriz_dispersa1.h"
 #include "Pilas.h"
 #include "PilasL.h"
+#include "Cola.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -63,6 +64,13 @@ __published:	// IDE-managed Components
 	TEdit *Edit13;
 	TEdit *Edit14;
 	TEdit *Edit15;
+	TButton *Button29;
+	TButton *Button30;
+	TButton *Button31;
+	TButton *Button32;
+	TButton *Button33;
+	TEdit *Edit16;
+	TEdit *Edit17;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
@@ -91,6 +99,10 @@ __published:	// IDE-managed Components
 	void __fastcall Button26Click(TObject *Sender);
 	void __fastcall Button27Click(TObject *Sender);
 	void __fastcall Button28Click(TObject *Sender);
+	void __fastcall Button29Click(TObject *Sender);
+	void __fastcall Button30Click(TObject *Sender);
+	void __fastcall Button31Click(TObject *Sender);
+	void __fastcall Button32Click(TObject *Sender);
 private:	// User declarations
 	Lista *lista;
 	PolinomioP *pol, *pol1;
@@ -101,6 +113,7 @@ private:	// User declarations
 	//MatrizD_2_nodos* x;
 	//Pilas* pila;
 	PilasL* pila;
+    Cola* cola;
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
 };

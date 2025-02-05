@@ -94,6 +94,10 @@ void PolinomioL::suprime(int exp) {
     asignar_coef(0, exp);
 }
 
+void PolinomioL::anula() {
+    pol->anule();
+}
+
 double PolinomioL::evaluar(double x) {
     direccion k = pol->primero();
 	double y = 0;

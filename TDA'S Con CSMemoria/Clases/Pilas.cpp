@@ -52,93 +52,92 @@ bool opCierre(char c) {
     return c == ')' || c == ']' || c == '}';
 }
 
+string Pilas::prefija_a_posfija(string infija, CSMemoria* mem) {
+	string postfix = "";
+	Pilas* operadores = new Pilas(mem);
 
-string Pilas::prefija_a_posfija(string infija) {
-    string postfix = "";
-    Pilas operadores;
-
-    for (size_t i = 0; i < infija.size(); ++i) {
-        if (isdigit(infija[i])) {
-            while (i < infija.size() && isdigit(infija[i])) {
-                postfix += infija[i];
-                i++;
-            }
-            postfix += ' ';
-            i--;
-        } else if (opApertura(infija[i]))
-            operadores.poner(infija[i]);
+	for (size_t i = 0; i < infija.size(); ++i) {
+		if (isdigit(infija[i])) {
+			while (i < infija.size() && isdigit(infija[i])) {
+				postfix += infija[i];
+				i++;
+			}
+			postfix += ' ';
+			i--;
+		} else if (opApertura(infija[i]))
+			operadores->poner(infija[i]);
 		else if (opCierre(infija[i])) {
-            double top;
-            while (!operadores.vacia()) {
-                operadores.sacar(top);
-                if (opApertura(top)) break;
-                postfix += (char)top;
-                postfix += ' ';
-            }
-        } else if (isoperator(infija[i])) {
-            double top;
-            while (!operadores.vacia()) {
-                operadores.sacar(top);
-                if (precedence(top) < precedence(infija[i])) {
-                    operadores.poner(top);
-                    break;
-                }
-                postfix += (char)top;
-                postfix += ' ';
-            }
-            operadores.poner(infija[i]);
-        }
-    }
+			double top;
+			while (!operadores->vacia()) {
+				operadores->sacar(top);
+				if (opApertura(top)) break;
+				postfix += (char)top;
+				postfix += ' ';
+			}
+		} else if (isoperator(infija[i])) {
+			double top;
+			while (!operadores->vacia()) {
+				operadores->sacar(top);
+				if (precedence(top) < precedence(infija[i])) {
+					operadores->poner(top);
+					break;
+				}
+				postfix += (char)top;
+				postfix += ' ';
+			}
+			operadores->poner(infija[i]);
+		}
+	}
 
-    double top;
-    while (!operadores.vacia()) {
-		operadores.sacar(top);
-        if (opApertura((char)top))
+	double top;
+	while (!operadores->vacia()) {
+		operadores->sacar(top);
+		if (opApertura((char)top))
 			throw Exception("Error: falta algun '), ], }'");
-        postfix += (char)top;
-        postfix += ' ';
-    }
-    return postfix;
+		postfix += (char)top;
+		postfix += ' ';
+	}
+	return postfix;
 }
 
 double evaluar(double a, double b, char operacion) {
-    if (operacion == '+') return a + b;
-    if (operacion == '-') return a - b;
-    if (operacion == '*') return a * b;
+	if (operacion == '+') return a + b;
+	if (operacion == '-') return a - b;
+	if (operacion == '*') return a * b;
 	if (operacion == '/') return a / b;
 	if (operacion == '^') return pow(a, b);
 	return -1;
 }
 
-double Pilas::evaluar_posfija(string posfija) {
+double Pilas::evaluar_posfija(string posfija, CSMemoria* mem) {
 	double resp = 0;
-    Pilas operadores;
-    for (size_t i = 0; i < posfija.size(); ++i) {
-        if (isdigit(posfija[i])) {
-            string num = "";
-            while (i < posfija.size() && isdigit(posfija[i])) {
-                num += posfija[i];
-                i++;
-            }
-            operadores.poner(stoi(num));
-        } else if (isoperator(posfija[i])) {
+	Pilas* operadores = new Pilas(mem);
+	for (size_t i = 0; i < posfija.size(); ++i) {
+		if (isdigit(posfija[i])) {
+			string num = "";
+			while (i < posfija.size() && isdigit(posfija[i])) {
+				num += posfija[i];
+				i++;
+			}
+			operadores->poner(stoi(num));
+		} else if (isoperator(posfija[i])) {
 			double a, b;
-			operadores.sacar(b);
-			operadores.sacar(a);
-            resp = evaluar(a, b, posfija[i]);
-			operadores.poner(resp);
-            i++;
-        }
+			operadores->sacar(b);
+			operadores->sacar(a);
+			resp = evaluar(a, b, posfija[i]);
+			operadores->poner(resp);
+			i++;
+		}
 	}
 
-	if (!operadores.vacia())
-		operadores.sacar(resp);
-    return resp;
+	if (!operadores->vacia())
+		operadores->sacar(resp);
+	return resp;
 }
 
 string formatNumber(double number, int precision) {
 	ostringstream oss;
-    oss << fixed << setprecision(precision) << number;
+	oss << fixed << setprecision(precision) << number;
     return oss.str();
 }
 

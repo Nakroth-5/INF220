@@ -131,9 +131,10 @@ int ancho_celda, const string &mensaje, TColor color, bool con_borde) {
 
 void CSMemoria::mostrar(TCanvas *canvas, int desde, int hasta) {
     canvas->Brush->Color = clGradientActiveCaption;
-    canvas->Pen->Color = clBlack;
-    TRect rect(500, 30, 730, 600);
-    canvas->FillRect(rect);
+	canvas->Pen->Color = clBlack;
+    //          x,   y,  b,   h
+	TRect rect(500, 30, 730, 800);
+	canvas->FillRect(rect);
 	int x = 500, y = 30;
     int ancho_celda = 50;
     canvas->TextOut(x, 5, "Evert Rodriguez Araúz");

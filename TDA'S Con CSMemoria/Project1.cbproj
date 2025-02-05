@@ -121,6 +121,10 @@
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="Clases\Cola.cpp">
+            <DependentOn>Clases\Cola.h</DependentOn>
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Clases\ConjuntoL.cpp">
             <DependentOn>Clases\ConjuntoL.h</DependentOn>
             <BuildOrder>8</BuildOrder>

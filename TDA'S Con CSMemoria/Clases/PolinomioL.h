@@ -22,13 +22,15 @@ public:
     void poner_termino(int coef, int exp);
     int numero_terminos() { return pol->getLongitud() / 2; }
     int exponente(int ntr);
-    void operacion(PolinomioL *p1, PolinomioL *p2, int signo);
+	void operacion(PolinomioL *p1, PolinomioL *p2, int signo);
     void suma(PolinomioL *p1, PolinomioL *p2);
     void resta(PolinomioL *p1, PolinomioL *p2);
     void multiplicar(PolinomioL *p1, PolinomioL *p2);
-    void suprime(int exp);
+	void suprime(int exp);
+    void anula();
     double evaluar(double x);
-    void derivar();
+	void derivar();
+	void derivar(PolinomioL *p1);
     void mostrar(TCanvas *canvas, int x, int y);
 };
 //---------------------------------------------------------------------------

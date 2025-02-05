@@ -78,7 +78,7 @@ void PolinomioL::poner_termino(int coef, int exp) {
 	if (x == NULO && coef != 0) {
 		pol->inserta_primero(exp);
 		pol->inserta_primero(coef);
-    } else {
+	} else if (x != NULO){
 		asignar_coef(pol->recupera(pol->anterior(x)) + coef, exp);
 	}
 }
@@ -92,6 +92,10 @@ int PolinomioL::exponente(int ntr) {
 
 void PolinomioL::suprime(int exp) {
     asignar_coef(0, exp);
+}
+
+void PolinomioL::anula() {
+    pol->anule();
 }
 
 double PolinomioL::evaluar(double x) {
@@ -160,6 +164,18 @@ void PolinomioL::derivar() {
 		else
         	x = pol->siguiente(pol->siguiente(x));
     }
+}
+
+void PolinomioL::derivar(PolinomioL *p1) {
+	for (int i = 1; i <= p1->numero_terminos(); i++) {
+		int exp = p1->exponente(i);
+		int coef = p1->coeficiente(exp);
+		if (exp - 1 == - 1) {
+			poner_termino(0, exp - 1);
+		} else {
+            poner_termino(coef * exp, exp - 1);
+        }
+	}
 }
 
 //---------------------------------------------------------------------------

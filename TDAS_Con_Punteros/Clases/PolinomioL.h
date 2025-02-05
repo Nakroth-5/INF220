@@ -24,7 +24,8 @@ public:
     void suma(PolinomioL *p1, PolinomioL *p2);
     void resta(PolinomioL *p1, PolinomioL *p2);
     void multiplicar(PolinomioL *p1, PolinomioL *p2);
-    void suprime(int exp);
+	void suprime(int exp);
+    void anula();
     double evaluar(double x);
     void derivar();
     void mostrar(TCanvas *canvas, int x, int y);
